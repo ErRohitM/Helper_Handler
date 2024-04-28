@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+  <table class="excel-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Customer</th>
+        <th>Helper</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% csrf_token %}
+      {% for customer in all_customers %}
+      {% if not customer.assigned_helper %}
+      <tr>
+        <td>{{ customer.id }} | </td>
+        <td class="customer" name="customer_{{ customer.id }}" value="customer_{{ customer.id }}">{{ customer }}</td>
+        <td>
+          <select class="helper_assignee_" name="helper_for_{{ customer.id }}" onchange="get_val(this, {{ customer.id }});">
+            <option value="">Select Helper</option>
+            {% for helper in helpers_need_assign %}
+            {% if helper.is_assigned == False %}
+            <option value="{{ helper.id }}">{{ helper }}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+        </td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </tbody>
+{% endblock %}
+
+
+

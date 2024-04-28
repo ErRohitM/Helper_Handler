@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}   
+<div class="container">
+
+  <div class="row row-cols-1 row-cols-sm-4 row-cols-md-3 g-3 p-5">
+    <div class="col">
+      <div class="card shadow-sm">
+        <h3>Helper</h3>
+        <div class="card-body">
+          <p class="card-text">Add New Helper Here</p></br> 
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="{% url 'add_helper' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Add</button></a>
+              <a href="{% url 'list_helpers' %}"><button type="button" class="btn btn-sm btn-outline-secondary">ListAll</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></br>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 p-5">
+    <div class="col">
+      <div class="card shadow-sm">
+        <h3>Customer</h3>
+        <div class="card-body">
+          <p class="card-text">Add New Customer Here</p></br> 
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="{% url 'create_customer' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Add</button></a>
+              <a href="{% url 'list_customers' %}"><button type="button" class="btn btn-sm btn-outline-secondary">ListAll</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></br>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 p-5">
+    <div class="col">
+      <div class="card shadow-sm">
+        <h3>Assigned Helpers</h3>
+        <div class="card-body">
+          <p class="card-text">Assign Helper to each Customers</p></br> 
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="{% url 'assign_helpers' %}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+              <a href="{% url 'helper_assigned' %}"><button type="button" class="btn btn-sm btn-outline-secondary">ListAll</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

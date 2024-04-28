@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+      <form method="POST" action="." style="width:50rem; padding-left:1rem;">
+        {% csrf_token %}
+    
+        {{ form.as_p }}
+        <button class="btn btn-primary w-100 py-2"style="width:20rem;" type="submit">Create</button>
+    </form>
+{% endblock %}

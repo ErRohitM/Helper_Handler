@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+  <table class="excel-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Helper Name</th>
+        <th>skill</th>
+        <th>Age</th>
+        <th>gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for help in helpers %}
+      <tr>
+        <td>{{ help.id }}</td>
+        <td>{{ help.helper }}</td>
+        <td>{{ help.skill }}</td>
+        <td>{{ help.age }}</td>
+        <td>{{ help.gender }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

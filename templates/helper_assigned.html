@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    <table class="excel-table">
+        <thead >
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for helper in helpers_not_assigned %}
+          
+          <tr>
+            <td>{{ helper.id }}</td>
+            <td>{{ helper.helper }}</td>
+            <td>{{ helper.age }}</td>
+            {% if helper.is_assigned == True %}
+            <td>Assigned</td>
+            {% else %}
+            <td>Not Assigned</td>
+            {% endif %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+  
+{% endblock %}
