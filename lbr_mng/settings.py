@@ -17,7 +17,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+AUTH_USER_MODEL = "customer.Customer" 
 # Application definition
 
 INSTALLED_APPS = [
@@ -30,6 +30,7 @@ INSTALLED_APPS = [
 
     'labour',
     'customer',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [

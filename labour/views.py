@@ -5,26 +5,32 @@ from customer.models import Customer
 from django.views.decorators.csrf import csrf_exempt
 import json
 from .forms import Add_helper
+from django.contrib.admin.views.decorators import staff_member_required
+from customer.decorators import superuser_required
 
 
+# @superuser_required()
 def index(request):
     return render(request, 'index.html')
 
+@superuser_required()
 def add_helper(request):
     if request.method == 'POST':
         form = Add_helper(request.POST)
         if form.is_valid():
+            # helper_instance = form.save()  # Get the instance without saving to database yet
             form.save()
             return redirect('assign_helpers')
         # return redirect('assign_helpers')
         else:
-            return redirect('list_helpers')
+            return redirect('add_helper')
     else:
         form = Add_helper()
         return render(request, 'create_helper_profile.html', {'form': form})
 
     # return render(request, 'assign_helpers.html', context)
 
+@superuser_required()
 def list_helpers(request):
     helpers = Helpers.objects.all()
     context = {
@@ -32,6 +38,7 @@ def list_helpers(request):
     }
     return render(request, 'list_helpers.html', context)
 
+@staff_member_required
 def assign_helpers(request):
     helpers_need_assign = Helpers.objects.all()
     all_customers = Customer.objects.all()
@@ -43,6 +50,7 @@ def assign_helpers(request):
     return render(request, 'assign_helpers.html', context)
 
 @csrf_exempt
+@superuser_required()
 def save_selected_value(request):
     if request.method == 'POST':
         try:
@@ -71,7 +79,7 @@ def save_selected_value(request):
     else:
         return JsonResponse({'success': False, 'error': 'Invalid request method'})
     
-
+@superuser_required()
 def helper_assigned(request):
     # helpers_assigned = Helpers.objects.filter(is_assigned=False)
     helpers_assigned = Helpers.objects.all

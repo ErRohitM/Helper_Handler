@@ -9,9 +9,10 @@
       </tr>
     </thead>
     <tbody>
-      {% csrf_token %}
+      
       {% for customer in all_customers %}
       {% if not customer.assigned_helper %}
+      {% csrf_token %}
       <tr>
         <td>{{ customer.id }} | </td>
         <td class="customer" name="customer_{{ customer.id }}" value="customer_{{ customer.id }}">{{ customer }}</td>

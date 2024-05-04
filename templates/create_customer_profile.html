@@ -7,8 +7,17 @@
         {% csrf_token %}
     
         {{ form.as_p }}
-        <button class="btn btn-primary w-100 py-2"style="width:20rem;" type="submit">Create</button>
-    </form>
-
+        <button class="btn btn-primary w-100 py-2" style="width:20rem;" id="add_helpers" type="submit">Create</button>
+        
+      </form>
+      <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            const phoneInput = document.querySelector('input[name="phone"]');
+            const phone = phoneInput.value.trim();
+            console.log('valid'+phoneInput);
+            
+        });
+        </script>
+        
 
 {% endblock %}
