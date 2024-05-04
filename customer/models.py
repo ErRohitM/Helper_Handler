@@ -7,6 +7,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 
 class Customer(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE)
+    password = models.CharField(max_length=50)
     # customer_name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     address = models.CharField(max_length=100)
