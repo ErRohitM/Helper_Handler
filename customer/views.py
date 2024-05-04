@@ -8,7 +8,7 @@ from .decorators import superuser_required
 
 
 
-# @superuser_required()
+@superuser_required()
 def create_customer(request):
     if request.method == 'POST':
         form = CustomerForm(request.POST)

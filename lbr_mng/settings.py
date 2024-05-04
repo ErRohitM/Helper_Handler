@@ -17,7 +17,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL = "customer.Customer" 
+# AUTHENTICATION_BACKENDS = [
+#     'django.contrib.auth.backends.ModelBackend',
+# ]
+# AUTH_USER_MODEL = "customer.Customer" 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -64,6 +68,25 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'lbr_mng.wsgi.application'
 
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/home/rohit/Desktop/new.log',  # Adjust the path as needed
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

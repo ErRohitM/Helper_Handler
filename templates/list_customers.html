@@ -7,6 +7,7 @@
       <th>#</th>
       <th>Customer Name</th>
       <th>Email</th>
+      <th>Admin / Operator</th>
       <th>phone</th>
     </tr>
   </thead>
@@ -14,8 +15,15 @@
     {% for customer in customers %}
     <tr>
       <td>{{ customer.id }}</td>
-      <td>{{ customer.customer_name }}</td>
+      <td>{{ customer.username }}</td>
       <td>{{ customer.email }}</td>
+      {% if customer.is_staff and customer.is_admin %}
+      <td>Operator & Admin</td>
+      {% elif customer.is_staff %}
+      <td>Operator</td>
+      {% else %}
+      <td>Admin</td>
+      {% endif %}
       <td>{{ customer.phone }}</td>
     </tr>
     {% endfor %}
