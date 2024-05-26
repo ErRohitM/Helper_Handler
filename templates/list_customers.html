@@ -15,7 +15,7 @@
     {% for customer in customers %}
     <tr>
       <td>{{ customer.id }}</td>
-      <td>{{ customer.username }}</td>
+      <td>{{ customer.customer_name }}</td>
       <td>{{ customer.email }}</td>
       {% if customer.is_staff and customer.is_admin %}
       <td>Operator & Admin</td>

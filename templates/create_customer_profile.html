@@ -3,18 +3,35 @@
 
 
 
-      <form method="POST" action="{% url 'create_customer'%}" style="width:50rem; padding-left:1rem;">
-        {% csrf_token %}
-    
-        {{ form.as_p }}
-        <button class="btn btn-primary w-100 py-2" style="width:20rem;" id="add_helpers" type="submit">Create</button>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 p-5">
+  <div class="col">
+    <div class="w3-theme-l2 card shadow-sm">
+      <div class="card-body">
+        <p class="card-text" style="font-size:30px;">Add New Customer Here</p></br> 
+        <div class="d-flex justify-content-between align-items-center">
+          <form method="POST" action="{% url 'create_customer'%}" style="width:50rem; padding-left:1rem;">
+            {% csrf_token %}
         
-      </form>
+            {{ form.as_p }}
+          <div class="btn-group">
+            <button class="btn btn-primary w-100 py-2" style="background-color:#87CEFA; color:#191970; font-size:30px;" id="add_helpers" type="submit">Create</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
       <script>
         document.querySelector("form").addEventListener("submit", function(event) {
             const phoneInput = document.querySelector('input[name="phone"]');
             const phone = phoneInput.value.trim();
-            console.log('valid'+phoneInput);
+            const phoneNumberPattern = /^\+91 \d{10}$/;
+            if(!phoneNumberPattern.test(phone)){
+              alert("Please enter a valid phone number.");
+              event.preventDefault();
+            }
             
         });
         </script>

@@ -34,8 +34,11 @@ INSTALLED_APPS = [
 
     'labour',
     'customer',
+    'user',
     'phonenumber_field',
 ]
+
+AUTH_USER_MODEL = 'user.AppUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

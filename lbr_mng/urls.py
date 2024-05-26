@@ -2,8 +2,9 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from labour.views import index,add_helper,assign_helpers,save_selected_value,list_helpers,helper_assigned
-from customer.views import list_customers,create_customer,user_login
+from user.views import index,assign_helpers,save_selected_value,helper_assigned,user_login
+from customer.views import list_customers,create_customer
+from labour.views import add_helper, list_helpers
 
 urlpatterns = [
     path('', index, name='index'),

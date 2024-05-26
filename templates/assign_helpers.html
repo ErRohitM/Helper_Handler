@@ -9,10 +9,9 @@
       </tr>
     </thead>
     <tbody>
-      
+      {% if perms.can_view_content %}
       {% for customer in all_customers %}
       {% if not customer.assigned_helper %}
-      {% csrf_token %}
       <tr>
         <td>{{ customer.id }} | </td>
         <td class="customer" name="customer_{{ customer.id }}" value="customer_{{ customer.id }}">{{ customer }}</td>
@@ -21,7 +20,7 @@
             <option value="">Select Helper</option>
             {% for helper in helpers_need_assign %}
             {% if helper.is_assigned == False %}
-            <option value="{{ helper.id }}">{{ helper }}</option>
+            <option class="helperName_{{ helper.id }}" value="{{ helper.id }}">{{ helper }}</option>
             {% endif %}
             {% endfor %}
           </select>
@@ -29,8 +28,11 @@
       </tr>
       {% endif %}
       {% endfor %}
+      {% endif %}
     </tbody>
 {% endblock %}
+
+
 
 
 

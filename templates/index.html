@@ -4,14 +4,14 @@
 
   <div class="row row-cols-1 row-cols-sm-4 row-cols-md-3 g-3 p-5">
     <div class="col">
-      <div class="card shadow-sm">
-        <h3>Helper</h3>
+      <div class="w3-theme-l2 card shadow-sm">
+        <h3 style="color:#FFA500; font-size:30px">Helper</h3>
         <div class="card-body">
-          <p class="card-text">Add New Helper Here</p></br> 
+          <p class="card-text" style="color:#000000; font-size:20px;">Add New Helper Here</p></br> 
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-              <a href="{% url 'add_helper' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Add</button></a>
-              <a href="{% url 'list_helpers' %}"><button type="button" class="btn btn-sm btn-outline-secondary">ListAll</button></a>
+              <a href="{% url 'add_helper' %}"><button type="button" class="btn btn-sm btn-outline-secondary p-2" style="background-color:#87CEFA; color:#191970; font-size:19px;">Add</button></a>
+              <a href="{% url 'list_helpers' %}"><button type="button" class="btn btn-sm btn-outline-secondary p-2" style="background-color:#87CEFA; color:#191970; font-size:19px;">ListAll</button></a>
             </div>
           </div>
         </div>
@@ -20,14 +20,14 @@
   </div></br>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 p-5">
     <div class="col">
-      <div class="card shadow-sm">
-        <h3>Customer</h3>
+      <div class="w3-theme-l2 card shadow-sm">
+        <h3 style="color:#FFA500; font-size:30px">Customer</h3>
         <div class="card-body">
-          <p class="card-text">Add New Customer Here</p></br> 
+          <p class="card-text" style="color:#000000; font-size:20px;">Add New Customer Here</p></br> 
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-              <a href="{% url 'create_customer' %}"><button type="button" class="btn btn-sm btn-outline-secondary">Add</button></a>
-              <a href="{% url 'list_customers' %}"><button type="button" class="btn btn-sm btn-outline-secondary">ListAll</button></a>
+              <a href="{% url 'create_customer' %}"><button type="button" class="btn btn-sm btn-outline-secondary p-2" style="background-color:#87CEFA; color:#191970; font-size:19px;">Add</button></a>
+              <a href="{% url 'list_customers' %}"><button type="button" class="btn btn-sm btn-outline-secondary p-2" style="background-color:#87CEFA; color:#191970; font-size:19px;">ListAll</button></a>
             </div>
           </div>
         </div>
@@ -36,14 +36,14 @@
   </div></br>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 p-5">
     <div class="col">
-      <div class="card shadow-sm">
-        <h3>Assigned Helpers</h3>
+      <div class="w3-theme-l2 card shadow-sm">
+        <h3 style="color:#FFA500; font-size:30px">Assigned Helpers</h3>
         <div class="card-body">
-          <p class="card-text">Assign Helper to each Customers</p></br> 
+          <p class="card-text" style="color:#000000; font-size:20px;">Assign Helper to each Customers</p></br> 
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-              <a href="{% url 'assign_helpers' %}"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-              <a href="{% url 'helper_assigned' %}"><button type="button" class="btn btn-sm btn-outline-secondary">ListAll</button></a>
+              <a href="{% url 'assign_helpers' %}"><button type="button" class="btn btn-sm btn-outline-secondary p-2" style="background-color:#87CEFA; color:#191970;font-size:19px;">Assign Helpers</button></a>
+              <a href="{% url 'helper_assigned' %}"><button type="button" class="btn btn-sm btn-outline-secondary p-2" style="background-color:#87CEFA; color:#191970; font-size:19px;">ListAll Assigned Helpers</button></a>
             </div>
           </div>
         </div>
